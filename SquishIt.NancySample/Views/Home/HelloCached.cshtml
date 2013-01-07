@@ -9,10 +9,8 @@
     <body>
         <h1>Hello World Page</h1>
         <p>Hello World!</p>
-        <p>This page will include a javascript bundle that is rendered to the file system and served as a static asset.</p>
+        <p>This page will include a javascript bundle that is rendered into memory in Global.asax and served through the Assets Module</p>
         @Html.Raw(Bundle.JavaScript()
-            .Add("~/Content/js/js1.js")
-            .Add("~/Content/js/js2.js")
-            .Render("~/Content/combined/bundle.js"))
+            .RenderCachedAssetTag("hello"))
     </body>
 </html>

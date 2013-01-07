@@ -7,6 +7,7 @@ namespace SquishIt.NancySample.Modules
         public HomeModule()
         {
             Get["/"] = parameters => View["Hello.cshtml"];
+            Get["/cached"] = parameters => View["HelloCached.cshtml"];
         }
     }
 }

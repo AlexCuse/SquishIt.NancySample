@@ -9,8 +9,9 @@ namespace SquishIt.NancySample
         protected void Application_Start(object sender, EventArgs e)
         {
             Bundle.JavaScript()
-                .AddString("alert('hello world');")
-                .AsCached("hello", "~/js/hello");
+                .Add("~/Content/js/js1.js")
+                .Add("~/Content/js/js2.js")
+                .AsCached("hello", "~/assets/js/hello");
         }
 
         protected void Session_Start(object sender, EventArgs e)

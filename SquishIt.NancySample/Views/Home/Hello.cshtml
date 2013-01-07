@@ -1,0 +1,17 @@
+﻿@using SquishIt.Framework
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Hello World Page</title>
+    </head>
+    <body>
+        <h1>Hello World Page</h1>
+        <p>Hello World!</p>
+        @Html.Raw(Bundle.JavaScript()
+            .Add("~/Content/js/js1.js")
+            .Add("~/Content/js/js2.js")
+            .Render("~/Content/combined/bundle.js"))
+    </body>
+</html>

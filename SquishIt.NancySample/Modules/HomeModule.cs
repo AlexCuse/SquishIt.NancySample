@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Nancy;
+﻿using Nancy;
 
 namespace SquishIt.NancySample.Modules
 {
@@ -10,7 +6,7 @@ namespace SquishIt.NancySample.Modules
     {
         public HomeModule()
         {
-            Get["/"] = parameters => "Hello World";
+            Get["/"] = parameters => View["Hello.cshtml"];
         }
     }
 }

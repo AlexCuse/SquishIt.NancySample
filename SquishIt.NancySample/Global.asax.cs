@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Security;
-using System.Web.SessionState;
 using SquishIt.Framework;
 
 namespace SquishIt.NancySample
@@ -15,7 +10,7 @@ namespace SquishIt.NancySample
         {
             Bundle.JavaScript()
                 .AddString("alert('hello world');")
-                .AsCached("hello", "~/content/hello.js");
+                .AsCached("hello", "~/js/hello");
         }
 
         protected void Session_Start(object sender, EventArgs e)

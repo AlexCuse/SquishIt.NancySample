@@ -10,8 +10,8 @@ namespace SquishIt.NancySample.Modules
         public AssetsModule()
             : base("/assets")
         {
-            Get["/js/{name}"] = parameters => CreateResponse(Bundle.JavaScript().RenderCached((string)parameters.name), "text/javascript");
-            Get["/css/{name}"] = parameters => CreateResponse(Bundle.Css().RenderCached((string)parameters.name), "text/css");
+            Get["/js/{name}"] = parameters => CreateResponse(Bundle.JavaScript().RenderCached((string)parameters.name), Configuration.Instance.JavascriptMimeType);
+            Get["/css/{name}"] = parameters => CreateResponse(Bundle.Css().RenderCached((string)parameters.name), Configuration.Instance.CssMimeType);
         }
 
         Response CreateResponse(string content, string contentType)

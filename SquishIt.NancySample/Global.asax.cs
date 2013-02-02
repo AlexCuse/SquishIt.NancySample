@@ -11,7 +11,6 @@ namespace SquishIt.NancySample
             Bundle.JavaScript()
                 .Add("~/Content/js/js1.js")
                 .Add("~/Content/js/js2.js")
-                .ForceRelease() //need this to avoid serving tags instead of content
                 .AsCached("hello", "~/assets/js/hello");
         }
 

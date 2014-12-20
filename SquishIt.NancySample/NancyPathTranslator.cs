@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Nancy;
 using SquishIt.Framework;
 
@@ -16,12 +17,13 @@ namespace SquishIt.NancySample
         public string ResolveAppRelativePathToFileSystem(string file)
         {
             // Remove query string
-            if(file.IndexOf('?') != -1)
+            if (file.IndexOf('?') != -1)
             {
                 file = file.Substring(0, file.IndexOf('?'));
             }
 
-            return _rootPathProvider.GetRootPath() + "/" + file.TrimStart('~').TrimStart('/');
+            var output = _rootPathProvider.GetRootPath().TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar + file.TrimStart('~').TrimStart('/').Replace('/', Path.DirectorySeparatorChar);
+            return output;
         }
 
         public string ResolveFileSystemPathToAppRelative(string file)
